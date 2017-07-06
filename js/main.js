@@ -25,7 +25,6 @@ var reset
 var hint
 var resetbtn = document.querySelector('#reset');
 var start = document.querySelector('start');
-// var alphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ;
 /*----- cached element references -----*/
 var $guess = $('#guess');
 var $img = $('#hang-img');
@@ -44,7 +43,7 @@ resetGame();
 
 function resetGame() {
     wrongCount = 6;
-    winner = 0;
+    // winner = 0;
     secretWord = words[getRandomInt(words.length - 1)];
     guess = '_'. repeat(secretWord.length);
     used = [];
@@ -63,7 +62,7 @@ function handleLetterClick(evt) {
         used.push(letter);
     }
     if (secretWord.includes(letter)) {
-        var pos = secretWord.indexOf(letter);
+        // var pos = secretWord.indexOf(letter);
         while (pos >= 0){
             guess = guess.split('');
             guess[pos] = letter;

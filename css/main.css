@@ -1,19 +1,9 @@
 body {
     text-align: center;
     background-image: url("../images/golf.jpg");
-    background-size: 100%; 
+    background-size: 200vh; 
+     background-color: rgba(255, 255, 255, .5);
     
-}
-
-div {
-    background-color: rgba(255, 255, 255, .5);
-}
-
-p {
-    text-align: center;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: blue;
 }
 
 .bottom-column {
@@ -21,18 +11,21 @@ p {
 }
 
 td {
-    border: 1px solid red;
-    padding: 10px;
+    border: 1px solid black;
+    padding: 20px;
     width: 30px;
     height: 30px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 20px;
+    color: blue;
+    background-color: rgba(255, 255, 255, .5);
     
 }
 
 table {
     border-spacing: 10px;
     margin: auto;
+    
 }
 
 #guess {
@@ -50,9 +43,20 @@ table {
 }
 
 button {
-    font-size: 25px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
 }
 
 #message {
     font-size: 50px;
+}
+
+.livesLeft {
+    font-size: 50px;
+    color: red;   
+}
+
+#message {
+    height: 40px;
 }
