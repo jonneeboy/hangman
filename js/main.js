@@ -14,27 +14,20 @@ var words = [
 
 
 /*----- app's state (variables) -----*/
-var lives 
 var used
 var wrongCount
 var secretWord
 var guess
-var letterBoard
-var winner
-var reset
-var hint
 var resetbtn = document.querySelector('#reset');
 var start = document.querySelector('start');
 /*----- cached element references -----*/
 var $guess = $('#guess');
 var $img = $('#hang-img');
 var $player = $('#player');
-var $countLives = document.getElementById("lives");
 var $message = $('#message');
 /*----- event listeners -----*/
 
 $('table').on('click', 'td', handleLetterClick);
-
 $('#reset').on('click', resetGame);
 $('#wrong').on('click', wrongCount);
 /*----- functions -----*/
@@ -43,7 +36,6 @@ resetGame();
 
 function resetGame() {
     wrongCount = 6;
-    // winner = 0;
     secretWord = words[getRandomInt(words.length - 1)];
     guess = '_'. repeat(secretWord.length);
     used = [];
@@ -58,18 +50,18 @@ function handleLetterClick(evt) {
     var letter = evt.target.textContent;
     if (used.includes(letter)) {
         return;
-    } else {
+    }else{
         used.push(letter);
     }
     if (secretWord.includes(letter)) {
-        // var pos = secretWord.indexOf(letter);
+        var pos = secretWord.indexOf(letter);
         while (pos >= 0){
             guess = guess.split('');
             guess[pos] = letter;
             guess = guess.join('');
             pos = secretWord.indexOf(letter, pos + 1);
         }
-    } else if (wrongCount > 0) {
+    }else if (wrongCount > 0) {
         wrongCount--;
     }
     render(); 
@@ -91,9 +83,9 @@ function render() {
     });
     if (guess === secretWord) {
         $message.html("HOLE IN ONE!!"); 
-    } else if (wrongCount === 0) {
+    }else if (wrongCount === 0) {
         $message.html("Mulligan??");
-    } else {
+    }else {
         $message.html("");
     }
 }
