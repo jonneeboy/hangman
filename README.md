@@ -16,7 +16,7 @@ A game of guessing words that are related to the sport of golf.  Golf is what ma
 # Getting Started
 This is a link to a live demo of my project: [hangman](https://jonneeboy.github.io/hangman/)
 
-[Imgur](http://i.imgur.com/Ty9PVKS.png)
+![Imgur](http://i.imgur.com/Ty9PVKS.png)
 
 # Next Step:
 
