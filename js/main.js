@@ -12,7 +12,6 @@ var words = [
     'PUTT'
 ];
 
-
 /*----- app's state (variables) -----*/
 var used
 var wrongCount
@@ -20,16 +19,17 @@ var secretWord
 var guess
 var resetbtn = document.querySelector('#reset');
 var start = document.querySelector('start');
+
 /*----- cached element references -----*/
 var $guess = $('#guess');
 var $img = $('#hang-img');
 var $player = $('#player');
 var $message = $('#message');
-/*----- event listeners -----*/
 
+/*----- event listeners -----*/
 $('table').on('click', 'td', handleLetterClick);
 $('#reset').on('click', resetGame);
-$('#wrong').on('click', wrongCount);
+
 /*----- functions -----*/
 
 resetGame();
@@ -50,7 +50,7 @@ function handleLetterClick(evt) {
     var letter = evt.target.textContent;
     if (used.includes(letter)) {
         return;
-    }else{
+    } else {
         used.push(letter);
     }
     if (secretWord.includes(letter)) {
@@ -67,9 +67,7 @@ function handleLetterClick(evt) {
     render(); 
 }   
     
-
-  
- function getRandomInt(max) {
+function getRandomInt(max) {
     return Math.floor(Math.random() * (max + 1));
 }
 
@@ -83,9 +81,9 @@ function render() {
     });
     if (guess === secretWord) {
         $message.html("HOLE IN ONE!!"); 
-    }else if (wrongCount === 0) {
-        $message.html("Mulligan??");
-    }else {
+    } else if (wrongCount === 0) {
+        $message.html("Mulligan?");
+    } else {
         $message.html("");
     }
 }
